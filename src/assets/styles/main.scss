@@ -1,0 +1,22 @@
+// common styles code
+@import "./common.scss";
+// common styles code
+
+// components styles code
+@import "@/components//navbar/navbar.scss";
+@import "@/components/swipper/swipper.scss";
+@import "@/components/card/card.scss";
+// components styles code
+
+// layouts styles code
+@import "@/layouts/headerLayouts/headerLayouts.scss";
+@import "@/layouts/footerLayouts/footerLayout.scss";
+// layouts styles code
+
+
+// views styles link
+@import "@/views/BasketView/basketView.scss";
+@import "@/views/EnterView/enterView.scss";
+@import "@/views/FavoriteView/favoriteView.scss";
+@import "@/views/HomeView/homeView.scss"
+// views styles link

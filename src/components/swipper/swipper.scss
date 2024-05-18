@@ -1,0 +1,30 @@
+.swiper {
+  margin-top: 50px;
+  width: 100%;
+  height: 413px;
+  border-radius: 12px;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  background: #b1b6cf;
+  width: 25px;
+  height: 25px;
+  padding: 20px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #7000ff;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 24px;
+}
+
+.swiper-pagination-bullet {
+  width: 5px;
+  height: 5px;
+  background: #b1b6cf;
+}
