@@ -8,6 +8,7 @@ import {
   IconHeard,
   IconBag,
   IconSearch,
+  IconNavHeard
 } from "@/lib/imports";
 // imports
 
@@ -130,7 +131,7 @@ const category = [
           <button class="navbar-sign"><IconPerson /> Kirish</button>
         </RouterLink>
         <RouterLink to="/favorite/">
-          <button class="navbar-fav"><IconHeard /> Saralangan</button>
+          <button class="navbar-fav"><IconNavHeard /> Saralangan</button>
         </RouterLink>
 
         <RouterLink to="/basket/">

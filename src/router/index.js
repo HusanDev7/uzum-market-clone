@@ -8,20 +8,29 @@ const router = createRouter({
       path: '/',
       component: HomePage
     },
+    
     {
       path: '/basket/',
       name: 'basket',
       component: () => import('@/pages/BasketPage.vue')
     },
+    
     {
       path: '/entrance/',
       name: 'entrance',
       component: () => import('@/pages/EnterPage.vue')
     },
+
     {
       path: '/favorite/',
       name: 'favorite',
       component: () => import('@/pages/FavoritePage.vue')
+    },
+
+    {
+      path: '/product/:id',
+      name: 'product',
+      component: () => import('@/pages/ProductAboutPage.vue')
     }
   ]
 })

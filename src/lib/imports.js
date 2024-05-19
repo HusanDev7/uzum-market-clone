@@ -8,8 +8,9 @@ import IconRussian from '@/components/icons/IconRussian.vue';
 import IconUzbekistan from '@/components/icons/IconUzbekistan.vue';
 import IconPerson from '@/components/icons/IconPerson.vue';
 import IconaddBag from '@/components/icons/IconaddBag.vue';
-import IconStar from '@/components/icons/IconStar.vue'
+import IconStar from '@/components/icons/IconStar.vue';
+import IconNavHeard from '@/components/icons/IconNavHeard.vue';
 // icons are imported here
 
 
-export { IconSearch, IconBag, IconHeard, IconLocation, IconLogo, IconRussian, IconUzbekistan, IconPerson, IconaddBag, IconStar };
+export { IconSearch, IconBag, IconHeard, IconLocation, IconLogo, IconRussian, IconUzbekistan, IconPerson, IconaddBag, IconStar, IconNavHeard };

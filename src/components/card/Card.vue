@@ -7,11 +7,16 @@ const props = defineProps({
     required: true,
   },
 });
+
+// const togleActive = () => {
+//   isActive.value = !isActive.value;
+// };
 </script>
 <template>
   <div class="card__wrapper">
-    <div class="card">
-      <!-- <span class="card__heard"><IconHeard /></span>  -->
+
+    <RouterLink :to="'/product/' + card.id" class="card">
+      <span class="card__heard"><IconHeard /></span>
       <div class="card__img-box">
         <img
           class="card__img"
@@ -34,6 +39,7 @@ const props = defineProps({
           </span>
         </div>
       </div>
-    </div>
+    </RouterLink>
+
   </div>
 </template>

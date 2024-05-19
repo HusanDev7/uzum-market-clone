@@ -5,93 +5,103 @@
     justify-content: center;
     align-content: center;
     margin-top: 70px;
+}
 
-    .card {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: column;
-        width: 100%;
-        max-width: 232px;
-        min-height: 440px;
-        border-radius: 2px;
-        cursor: pointer;
-        margin: 40px 0 0 0;
-        transition:
-            box-shadow 0.3s ease,
-            transform 0.3s ease;
+.card {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 100%;
+    max-width: 232px;
+    min-height: 440px;
+    border-radius: 2px;
+    cursor: pointer;
+    margin: 40px 0 0 0;
+    color: #1f2026;
+    transition:
+        box-shadow 0.3s ease,
+        transform 0.3s ease;
+}
 
-        &:hover {
-            &:hover {
-                box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-                transform: scale(1);
-            }
-        }
+.card:hover {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    transform: scale(1);
+    border-radius: 5px;
+}
 
-        &__img-box {
-            width: 232px;
-            height: 309px;
-            background: rgba(0, 0, 0, 0.2);
-            border-radius: 5px;
-        }
+.card__heard {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 180px;
+    padding: 10px;
+    z-index: 1;
+}
 
-        &__img {
-            // mix-blend-mode: color-burn;
-            // background-color: rgba(0, 0, 0, 0.2);
-            // width: 100%;
-            height: 100%;
-            width: 232px;
-            object-fit: cover;
-            mix-blend-mode: color-burn;
-        }
+.card__img-box {
+    position: relative;
+    width: 232px;
+    height: 309px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    z-index: -1;
+}
 
-        &__title {
-            font-size: 21px;
-            color: #1f2026;
-            font-weight: 500;
-            margin: 10px 0 0 7px;
-        }
+.card__img {
+    height: 100%;
+    width: 232px;
+    object-fit: cover;
+    mix-blend-mode: color-burn;
+}
 
-        &__status {
-            display: flex;
-            align-items: center;
-            font-size: 11px;
-            color: #8b8e99;
-            margin: 5px 0;
-        }
+.card__title {
+    font-size: 21px;
+    color: #1f2026;
+    font-weight: 500;
+    margin: 10px 0 0 7px;
+}
 
-        &__box {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 7px;
-            margin-top: 15px;
-        }
+.card__status {
+    display: flex;
+    align-items: center;
+    font-size: 11px;
+    color: #8b8e99;
+    margin: 5px 0;
+}
 
-        &__salle {
-            font-size: 11px;
-            color: #8b8e99;
-            text-decoration: line-through;
-            font-weight: 500;
-            padding: 5px 0;
-        }
+.card__box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 7px;
+    margin-top: 15px;
+}
 
-        &__price {
-            font-size: 14px;
-            color: #1f2026;
-        }
+.card__salle {
+    font-size: 11px;
+    color: #8b8e99;
+    text-decoration: line-through;
+    font-weight: 500;
+    padding: 5px 0;
+}
 
-        &__bag {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 50%;
-            padding: 5px 5px 5px;
-            border: solid 1px #8b8e99;
-            transition: 0.3s ease;
+.card__price {
+    font-size: 14px;
+    color: #1f2026;
+}
 
-            &:hover {
-                background: #8b8e99;
-            }
-        }
-    }
+.card__bag {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    padding: 5px 5px 5px;
+    border: solid 1px #8b8e99;
+    transition: 0.3s ease;
+}
+
+.card__bag:hover {
+    background: #8b8e99;
 }
