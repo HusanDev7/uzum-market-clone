@@ -1,5 +1,6 @@
 <script setup>
 import { useProductSingleStore } from "@/stores/productSingleStore";
+<<<<<<< HEAD
 import { useRoute } from "vue-router";
 import { IconStar, IconHeard } from "@/lib/imports";
 import { FreeMode, Navigation, Thumbs } from "swiper/modules";
@@ -9,11 +10,23 @@ const router = useRoute();
 const productSingleStore = useProductSingleStore();
 
 productSingleStore.getSingleProduct(router.params.id);
+=======
+import { onMounted } from "vue";
+import { useRouter } from "vue-router";
+const router = useRouter()
+const productSingleStore = useProductSingleStore();
+
+onMounted(() => {
+  productSingleStore.getSingleProduct(router.params.id);
+})
+
+>>>>>>> 4a36d80ab33555576a15b9de20823905a30597f1
 </script>
 
 <template>
   <section class="main">
     <div class="container">
+<<<<<<< HEAD
       <div class="product">
         <div class="product__imgs">
           <swiper
@@ -52,6 +65,9 @@ productSingleStore.getSingleProduct(router.params.id);
         </div>
         <div class="product__about"></div>
       </div>
+=======
+      <h1>Product name: {{ productSingleStore.product?.title }}</h1>
+>>>>>>> 4a36d80ab33555576a15b9de20823905a30597f1
     </div>
   </section>
 </template>

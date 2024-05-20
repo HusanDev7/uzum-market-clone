@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .basketNull {
   display: flex;
   justify-content: center;
@@ -33,3 +34,18 @@
     cursor: pointer;
   }
 }
+=======
+.basketNull {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100dvh;
+  width: 100%;
+
+  &__img {
+    width: 128px;
+    height: 128px;
+  }
+}
+>>>>>>> 4a36d80ab33555576a15b9de20823905a30597f1

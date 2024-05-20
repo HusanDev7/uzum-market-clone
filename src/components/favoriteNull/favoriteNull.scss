@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .productNull {
   display: flex;
   justify-content: center;
@@ -33,3 +34,40 @@
     cursor: pointer;
   }
 }
+=======
+.productNull {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100dvh;
+
+  &__img {
+    width: 128px;
+    height: 128px;
+  }
+
+  &__title {
+    font-size: 22px;
+    color: #1f2026;
+    margin: 24px 0;
+    text-align: center;
+  }
+
+  &__txt {
+    color: #1f2026;
+    font-size: 12px;
+  }
+
+  &__btn {
+    font-size: 14px;
+    color: #fff;
+    background: #7000ff;
+    padding: 7px 14px;
+    border-radius: 4px;
+    margin: 16px 0;
+    cursor: pointer;
+  }
+}
+>>>>>>> 4a36d80ab33555576a15b9de20823905a30597f1
