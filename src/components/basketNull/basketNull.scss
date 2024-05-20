@@ -1,0 +1,35 @@
+.basketNull {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100dvh;
+  width: 100%;
+
+  &__img {
+    width: 128px;
+    height: 128px;
+  }
+
+  &__title {
+    font-size: 22px;
+    color: #1f2026;
+    margin: 24px 0;
+    text-align: center;
+  }
+
+  &__txt {
+    color: #1f2026;
+    font-size: 12px;
+  }
+
+  &__btn {
+    font-size: 14px;
+    color: #fff;
+    background: #7000ff;
+    padding: 7px 14px;
+    border-radius: 4px;
+    margin: 16px 0;
+    cursor: pointer;
+  }
+}

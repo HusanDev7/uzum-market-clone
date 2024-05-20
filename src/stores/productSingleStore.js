@@ -1,20 +1,20 @@
-import apiProduct from '@/helpers/api/api'
-import { defineStore } from 'pinia'
+import { defineStore } from "pinia";
+import apiProduct from "@/helpers/api/api";
 
-export const useProductSingleStore = defineStore('productSingle', {
+
+export const useProductSingleStore = defineStore("productSingle", {
     state: () => ({
-        product: null
+        product: null,
     }),
-
     actions: {
         async getSingleProduct(id) {
             try {
-                const res = await apiProduct.getSingleProduct(id)
-                this.product = res
-                console.log(res);
+                const res = await apiProduct.getSingleProduct(id);
+                this.product = res;
             } catch (error) {
-                console.error(error)
+                console.error(error);
             }
-        }
-    }
-})
+        },
+
+    },
+});

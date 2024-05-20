@@ -1,5 +1,7 @@
 <script setup>
+import FavoriteNull from '@/components/favoriteNull/FavoriteNull.vue';
+
 </script>
 <template>
-  <h1>this is Favorite</h1>
+  <FavoriteNull />
 </template>

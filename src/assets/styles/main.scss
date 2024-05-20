@@ -6,6 +6,8 @@
 @import "@/components//navbar/navbar.scss";
 @import "@/components/swipper/swipper.scss";
 @import "@/components/card/card.scss";
+@import "@/components/favoriteNull/favoriteNull.scss";
+@import "@/components/basketNull/basketNull.scss";
 // components styles code
 
 // layouts styles code
@@ -13,10 +15,10 @@
 @import "@/layouts/footerLayouts/footerLayout.scss";
 // layouts styles code
 
-
 // views styles link
 @import "@/views/BasketView/basketView.scss";
 @import "@/views/EnterView/enterView.scss";
 @import "@/views/FavoriteView/favoriteView.scss";
-@import "@/views/HomeView/homeView.scss"
+@import "@/views/HomeView/homeView.scss";
+@import "@/views/ProductView/productView.scss"
 // views styles link
