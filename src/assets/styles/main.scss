@@ -13,10 +13,10 @@
 @import "@/layouts/footerLayouts/footerLayout.scss";
 // layouts styles code
 
-
 // views styles link
 @import "@/views/BasketView/basketView.scss";
 @import "@/views/EnterView/enterView.scss";
 @import "@/views/FavoriteView/favoriteView.scss";
-@import "@/views/HomeView/homeView.scss"
+@import "@/views/HomeView/homeView.scss";
+@import "@/components/favoriteNull/favoriteNull.scss";
 // views styles link

@@ -8,13 +8,13 @@ const router = createRouter({
       path: '/',
       component: HomePage
     },
-    
+
     {
       path: '/basket/',
       name: 'basket',
       component: () => import('@/pages/BasketPage.vue')
     },
-    
+
     {
       path: '/entrance/',
       name: 'entrance',

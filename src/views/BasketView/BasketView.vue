@@ -1,5 +1,6 @@
 <script setup>
+import BasketNull from '@/components/basketNull/BasketNull.vue';
 </script>
 <template>
-  <h1>this is Basket</h1>
+  <BasketNull />
 </template>
