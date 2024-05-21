@@ -8,9 +8,6 @@ const props = defineProps({
   },
 });
 
-// const togleActive = () => {
-//   isActive.value = !isActive.value;
-// };
 </script>
 <template>
   <RouterLink :to="'/product/' + card.id" class="card">
@@ -29,7 +26,7 @@ const props = defineProps({
     <div class="card__box">
       <div class="card__box-item">
         <p class="card__salle">{{ card.discountPercentage * 25 }} so'm</p>
-        <p class="card__price">{{ card.price }} so'm</p>
+        <p class="card__price">{{ card.price }} 000 so'm</p>
       </div>
       <div class="card__box-item">
         <span class="card__bag">
