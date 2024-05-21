@@ -8,6 +8,7 @@
 @import "@/components/card/card.scss";
 @import "@/components/favoriteNull/favoriteNull.scss";
 @import "@/components/basketNull/basketNull.scss";
+@import "@/components/productSwipper/productSwipper.scss";
 // components styles code
 
 // layouts styles code
@@ -20,9 +21,5 @@
 @import "@/views/EnterView/enterView.scss";
 @import "@/views/FavoriteView/favoriteView.scss";
 @import "@/views/HomeView/homeView.scss";
-<<<<<<< HEAD
-@import "@/views/ProductView/productView.scss"
-=======
-@import "@/components/favoriteNull/favoriteNull.scss";
->>>>>>> 4a36d80ab33555576a15b9de20823905a30597f1
+@import "@/views/ProductView/productView.scss";
 // views styles link

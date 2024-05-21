@@ -1,73 +1,55 @@
 <script setup>
 import { useProductSingleStore } from "@/stores/productSingleStore";
-<<<<<<< HEAD
 import { useRoute } from "vue-router";
+import ProductSwipper from "@/components/productSwipper/ProductSwipper.vue";
 import { IconStar, IconHeard } from "@/lib/imports";
-import { FreeMode, Navigation, Thumbs } from "swiper/modules";
-import "swiper/css/navigation";
-import "swiper/css";
-const router = useRoute();
+const route = useRoute();
+
 const productSingleStore = useProductSingleStore();
 
-productSingleStore.getSingleProduct(router.params.id);
-=======
-import { onMounted } from "vue";
-import { useRouter } from "vue-router";
-const router = useRouter()
-const productSingleStore = useProductSingleStore();
-
-onMounted(() => {
-  productSingleStore.getSingleProduct(router.params.id);
-})
-
->>>>>>> 4a36d80ab33555576a15b9de20823905a30597f1
+productSingleStore.getSingleProduct(route.params.id);
 </script>
 
 <template>
-  <section class="main">
-    <div class="container">
-<<<<<<< HEAD
-      <div class="product">
-        <div class="product__imgs">
-          <swiper
-            v-if="productSingleStore.product?.images.length > 1"
-            @swiper="setThumbsSwiper"
-            :grabCursor="true"
-            :spaceBetween="1"
-            :slidesPerView="productSingleStore.product?.images.length"
-            :freeMode="true"
-            :watchSlidesProgress="true"
-            :modules="modules"
-            class="mySwiper"
-          >
-            <swiper-slide
-              imgper-slide
-              v-for="(image, i) in productSingleStore.product?.images"
-              :key="i"
-              ><img class="swiper__slide-img" :src="image" alt=""
-            /></swiper-slide>
-          </swiper>
-
-          <swiper
-            :spaceBetween="10"
-            :navigation="true"
-            :thumbs="{ swiper: thumbsSwiper }"
-            :modules="modules"
-            :grabCursor="true"
-            class="mySwiper2"
-          >
-            <swiper-slide
-              v-for="(image, i) in productSingleStore.product?.images"
-              :key="i"
-              ><img class="swiper__slide-img2" :src="image" alt=""
-            /></swiper-slide>
-          </swiper>
+    <section class="main">
+        <div class="container">
+            <div class="product">
+                <div class="product__imgs">
+                    <img src="../../assets/img/no-photo.jpg" alt="" />
+                    <!-- <ProductSwipper /> -->
+                </div>
+                <div class="product__about">
+                    <div class="product__box">
+                        <div class="product__box-mini">
+                            <IconStar />
+                            <span class="product__box-rating">
+                                {{ productSingleStore.product?.rating }}
+                            </span>
+                            <span class="product__box-txt">(baho)</span>
+                            <span class="product__box-txt">{{ productSingleStore.product?.stock }} Buyurtma</span>
+                        </div>
+                        <div class="product__box-mini">
+                            <span class="product__box-mini-fav">
+                                <IconHeard :size="16 && 16" />
+                            </span>
+                            <span class="product__box-txt-fav">Istaklarga</span>
+                        </div>
+                    </div>
+                    <div class="product__desc">
+                        <h3 class="product__title">{{ productSingleStore.product?.title }}</h3>
+                        <p class="product__txt">{{ productSingleStore.product?.description }}</p>
+                        <span class="product__line"></span>
+                        <div class="product__prices-count">
+                            <h4 class="product__conter-title">Miqdor:</h4>
+                            <div class="product__counter">
+                                <span class="product__counter-decrement">-</span>
+                                <span class="product__count">1</span>
+                                <span class="product__counter-increment">+</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="product__about"></div>
-      </div>
-=======
-      <h1>Product name: {{ productSingleStore.product?.title }}</h1>
->>>>>>> 4a36d80ab33555576a15b9de20823905a30597f1
-    </div>
-  </section>
+    </section>
 </template>
