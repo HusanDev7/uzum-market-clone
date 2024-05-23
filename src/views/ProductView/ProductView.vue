@@ -1,7 +1,7 @@
 <script setup>
 import { useProductSingleStore } from "@/stores/productSingleStore";
 import { useRoute } from "vue-router";
-// import ProductSwipper from "@/components/productSwipper/ProductSwipper.vue";
+import ProductSwipper from "@/components/productSwipper/ProductSwipper.vue";
 import { IconStar, IconHeard } from "@/lib/imports";
 const route = useRoute();
 
@@ -15,8 +15,8 @@ productSingleStore.getSingleProduct(route.params.id);
     <div class="container">
       <div class="product">
         <div class="product__imgs">
-          <img src="../../assets/img/no-photo.jpg" alt="" />
-          <!-- <ProductSwipper /> -->
+          <!-- <img src="../../assets/img/no-photo.jpg" alt="" /> -->
+          <ProductSwipper />
         </div>
         <div class="product__about">
           <div class="product__box">
@@ -63,9 +63,15 @@ productSingleStore.getSingleProduct(route.params.id);
           </div>
 
           <div class="product__btns">
-            <button class="product__btns-btn">Savatga qoshish</button>
+            <button class="product__btns-btn">
+              <RouterLink to="#!" class="product__btns-btn-link1"
+                >Savatga qoshish</RouterLink
+              >
+            </button>
             <button class="product__btns-btn-order">
-              <RouterLink to="/"> Tugmani 1 bosishda xarid qilish </RouterLink>
+              <RouterLink to="/" class="product__btns-btn-order-link">
+                Tugmani 1 bosishda xarid qilish
+              </RouterLink>
             </button>
           </div>
         </div>

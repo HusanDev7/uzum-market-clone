@@ -2,7 +2,20 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    // flex-wrap: wrap;
     margin-top: 50px;
+
+    @media (max-width: 1120px) {
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__about{
+        @media (max-width: 1120px) {
+            margin: 20px;
+        }
+    }
 
     &__box {
         display: flex;
@@ -140,12 +153,18 @@
             padding: 20px 70px;
             border-radius: 12px;
             cursor: pointer;
+
+            &-link1 {
+                text-overflow: ellipsis;
+                color: #fff;
+            }
+
+
         }
 
         &-btn-order {
             border: solid 1px #73f;
             background: #fff;
-            color: #73f;
             font-size: 14px;
             display: flex;
             text-align: center;
@@ -156,6 +175,11 @@
             padding: 9px 70px;
             border-radius: 12px;
             cursor: pointer;
+
+            &-link {
+                color: #73f;
+            }
+
         }
     }
 }
