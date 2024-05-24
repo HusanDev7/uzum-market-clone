@@ -1,33 +1,26 @@
 <script setup>
 import { ref, onMounted } from "vue";
 import { useProductSingleStore } from "@/stores/productSingleStore";
-import { useRoute } from "vue-router";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { FreeMode, Navigation, Thumbs } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
-import "@/components/productSwipper/productSwipper.scss";
 
 const productSingleStore = useProductSingleStore();
-const route = useRoute();
 const thumbsSwiper = ref(null);
 const modules = [FreeMode, Navigation, Thumbs];
 
 const setThumbsSwiper = (swiper) => {
   thumbsSwiper.value = swiper;
 };
-
-onMounted(async () => {
-  await productSingleStore.getSingleProduct(route.params.id);
-  console.log(productSingleStore.product);
-});
 </script>
 
 <template>
   <div>
     <swiper
+      v-if="productSingleStore.product?.images.length"
       :spaceBetween="10"
       :navigation="true"
       :thumbs="{ swiper: thumbsSwiper }"
@@ -42,6 +35,7 @@ onMounted(async () => {
       </swiper-slide>
     </swiper>
     <swiper
+      v-if="productSingleStore.product?.images.length"
       @swiper="setThumbsSwiper"
       :spaceBetween="10"
       :slidesPerView="4"
@@ -59,3 +53,26 @@ onMounted(async () => {
     </swiper>
   </div>
 </template>
+<style scoped>
+.swiper {
+  width: 650px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: auto;
+  max-width: 270px;
+  object-fit: cover;
+}
+</style>

@@ -15,8 +15,7 @@ productSingleStore.getSingleProduct(route.params.id);
     <div class="container">
       <div class="product">
         <div class="product__imgs">
-          <!-- <img src="../../assets/img/no-photo.jpg" alt="" /> -->
-          <ProductSwipper />
+          <ProductSwipper /> 
         </div>
         <div class="product__about">
           <div class="product__box">
