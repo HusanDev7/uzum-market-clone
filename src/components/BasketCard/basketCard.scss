@@ -1,0 +1,158 @@
+.how-meny-product {
+    font-size: 24px;
+    margin-top: 50px;
+    color: #1f2026;
+
+    & span {
+        color: #8b8e99;
+        font-size: 24px;
+    }
+}
+
+.basket {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+
+    &__box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 70px;
+        width: 868px;
+        height: 100%;
+
+        &-line-over {
+            border: solid 0.5px #9e9fa5;
+            border-radius: 4px;
+        }
+
+        &-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        &-card {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 60px;
+
+            &-mini2 {
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                gap: 30px;
+            }
+        }
+        &-img {
+            width: 120px;
+            height: 120px;
+        }
+
+        &-title {
+            font-size: 16px;
+            font-weight: 500;
+            color: #1f2026;
+            padding: 25px 0;
+        }
+
+        &-txt {
+            font-size: #8b8e99;
+            font-size: 14px;
+            font-weight: 400;
+        }
+
+        &-counter {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 120px;
+            height: 40px;
+            background: #fff;
+            gap: 20px;
+            border: solid 1px #8b8e99;
+
+            &-decrement {
+                font-size: 32px;
+                font-weight: 500;
+                cursor: pointer;
+            }
+
+            &-increment {
+                font-size: 32px;
+                font-weight: 500;
+                cursor: pointer;
+            }
+        }
+        &-dell {
+            display: flex;
+            align-items: center;
+            color: #595b66;
+            font-size: 13px;
+            font-weight: 400;
+            cursor: pointer;
+            transition: 0.4s;
+
+            &:hover {
+                color: #1f2026;
+            }
+        }
+
+        &-line {
+            width: 834px;
+            height: 2px;
+            background: #36364014;
+        }
+    }
+
+    &-order {
+        width: 300px;
+        height: 300px;
+        border: solid 0.5px #9e9fa5;
+        padding: 10px;
+        border-radius: 4px;
+
+        &-box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 30px 0;
+        }
+
+        &-prices {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 40px;
+        }
+
+        &-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #000;
+            margin: 20px 0 30px 0;
+        }
+
+        &-delivary {
+            padding: 6px;
+            border: solid 1px #7000ff;
+            cursor: pointer;
+        }
+
+        &-goOrder {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 40px;
+            border-radius: 5px;
+            background: #7000ff;
+            color: #fff;
+            cursor: pointer;
+            margin: 40px auto;
+        }
+    }
+}

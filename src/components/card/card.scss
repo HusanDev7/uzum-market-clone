@@ -19,9 +19,7 @@
     cursor: pointer;
     margin: 40px 0 0 0;
     color: #1f2026;
-    transition:
-        box-shadow 0.3s ease,
-        transform 0.3s ease;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .card:hover {
@@ -32,12 +30,8 @@
 
 .card__heard {
     position: absolute;
-    top: 0;
     right: 0;
-    bottom: 0;
-    left: 180px;
-    padding: 10px;
-    z-index: 1;
+    margin: 10px;
 }
 
 .card__img-box {
@@ -100,6 +94,7 @@
     padding: 5px 5px 5px;
     border: solid 1px #8b8e99;
     transition: 0.3s ease;
+    z-index: 99;
 }
 
 .card__bag:hover {

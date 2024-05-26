@@ -83,6 +83,13 @@
 
     &__prices-count {
         margin-top: 50px;
+        display: flex;
+        align-items: center;
+        gap: 40px;
+
+        &-quantity {
+            color: #009c38;
+        }
     }
 
     &__conter-title {
@@ -153,8 +160,6 @@
             &-link1 {
                 color: #fff;
             }
-
-
         }
 
         &-btn-order {
@@ -170,7 +175,6 @@
             &-link {
                 color: #73f;
             }
-
         }
     }
 }

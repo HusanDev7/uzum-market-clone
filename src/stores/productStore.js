@@ -1,20 +1,20 @@
-import apiProduct from '@/helpers/api/api'
-import { defineStore } from 'pinia'
+import apiProduct from "@/helpers/api/api";
+import { defineStore } from "pinia";
 
-export const useProductStore = defineStore('product', {
+export const useProductStore = defineStore("product", {
     state: () => ({
-        products: null
+        products: null,
     }),
 
     actions: {
-        async getProduct(skip = 0, limit = 100) {
+        async getProduct(skip = 0, limit = 20) {
             try {
-                const res = await apiProduct.getProduct(skip, limit)
-                this.products = res.products
-                // console.log(res);    
+                const res = await apiProduct.getProduct(skip, limit);
+                this.products = res.products;
+                // console.log(res);
             } catch (error) {
-                console.error(error)
+                console.error(error);
             }
-        }
-    }
-})
+        },
+    },
+});
