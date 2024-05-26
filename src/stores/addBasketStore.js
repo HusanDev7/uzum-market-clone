@@ -1,5 +1,6 @@
 import { defineStore } from "pinia";
 import { useProductStore } from "./productStore";
+
 export const useAddBasketStore = defineStore("addBasket", {
     state: () => ({
         basket: [],

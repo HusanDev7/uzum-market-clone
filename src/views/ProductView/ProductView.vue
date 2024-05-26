@@ -3,8 +3,10 @@
     import { useRoute } from "vue-router";
     import ProductSwipper from "@/components/productSwipper/ProductSwipper.vue";
     import { IconStar, IconHeard } from "@/lib/imports";
-    const route = useRoute();
+    import { useAddBasketStore } from "@/stores/addBasketStore";
 
+    const addBasketStore = useAddBasketStore();
+    const route = useRoute();
     const productSingleStore = useProductSingleStore();
 
     productSingleStore.getSingleProduct(route.params.id);
@@ -61,7 +63,7 @@
                     </div>
 
                     <div class="product__btns">
-                        <button class="product__btns-btn">
+                        <button class="product__btns-btn" @click="addBasketStore.getAddBasket(productSingleStore.product?.id)">
                             <RouterLink to="#!" class="product__btns-btn-link1">Savatga qoshish</RouterLink>
                         </button>
                         <button class="product__btns-btn-order">
