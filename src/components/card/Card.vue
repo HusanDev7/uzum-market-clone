@@ -1,20 +1,26 @@
 <script setup>
-    import { IconaddBag, IconHeard, IconStar } from "@/lib/imports";
-    import { useAddBasketStore } from "@/stores/addBasketStore";
+import { IconaddBag, IconHeard, IconStar } from "@/lib/imports";
+import { useAddBasketStore } from "@/stores/addBasketStore";
+import { ref } from "vue";
+const addBasketStore = useAddBasketStore();
 
-    const addBasketStore = useAddBasketStore();
+const props = defineProps({
+    card: {
+        type: Object,
+        required: true,
+    },
+});
 
-    const props = defineProps({
-        card: {
-            type: Object,
-            required: true,
-        },
-    });
+const isActive = ref(false);
+
+const toggleActive = () => {
+    isActive.value = !isActive.value;
+};
 </script>
 <template>
     <div class="card">
-        <span class="card__heard">
-            <IconHeard />
+        <span class="card__heard" @click="toggleActive">
+            <IconHeard class="card__heard-heard" :class="{ active: isActive }" />
         </span>
         <div class="card__img-box">
             <RouterLink :to="'/product/' + card.id">

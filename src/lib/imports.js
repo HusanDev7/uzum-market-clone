@@ -11,6 +11,10 @@ import IconaddBag from "@/components/icons/IconaddBag.vue";
 import IconStar from "@/components/icons/IconStar.vue";
 import IconNavHeard from "@/components/icons/IconNavHeard.vue";
 import IconDell from "@/components/icons/IconDell.vue";
+import IconInstagram from "@/components/icons/IconInstagram.vue";
+import IconTelegram from "@/components/icons/IconTelegram.vue";
+import IconYoutube from "@/components/icons/IconYoutube.vue";
+import IconFackebook from "../components/icons/IconFackebook.vue"
 // icons are imported here
 
 export {
@@ -26,4 +30,8 @@ export {
     IconStar,
     IconNavHeard,
     IconDell,
+    IconInstagram,
+    IconTelegram,
+    IconYoutube,
+    IconFackebook
 };

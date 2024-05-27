@@ -32,6 +32,18 @@
     position: absolute;
     right: 0;
     margin: 10px;
+
+    &-heard {
+        & path {
+            fill: transparent;
+            stroke: rgba(0, 0, 0, 0.7);
+        }
+
+        &.active path {
+            stroke: #7000ff;
+            fill: #7000ff;
+        }
+    }
 }
 
 .card__img-box {

@@ -1,61 +1,61 @@
 <script setup>
-    import { IconLocation, IconUzbekistan, IconRussian, IconLogo, IconPerson, IconHeard, IconBag, IconSearch, IconNavHeard } from "@/lib/imports";
-    // imports
+import { IconLocation, IconUzbekistan, IconRussian, IconLogo, IconPerson, IconHeard, IconBag, IconSearch, IconNavHeard } from "@/lib/imports";
+// imports
 
-    import { useAddBasketStore } from "@/stores/addBasketStore";
+import { useAddBasketStore } from "@/stores/addBasketStore";
 
-    const addBasketStore = useAddBasketStore();
+const addBasketStore = useAddBasketStore();
 
-    import { ref } from "vue";
-    import { useRoute } from "vue-router";
+import { ref } from "vue";
+import { useRoute } from "vue-router";
 
-    const dropdownActive = ref(false);
+const dropdownActive = ref(false);
 
-    const toggleDropdown = () => {
-        dropdownActive.value = !dropdownActive.value;
-    };
+const toggleDropdown = () => {
+    dropdownActive.value = !dropdownActive.value;
+};
 
-    const category = [
-        {
-            id: 1,
-            keyWords: "Elektronika",
-        },
+const category = [
+    {
+        id: 1,
+        keyWords: "Elektronika",
+    },
 
-        {
-            id: 2,
-            keyWords: "Maishiy texnika",
-        },
+    {
+        id: 2,
+        keyWords: "Maishiy texnika",
+    },
 
-        {
-            id: 3,
-            keyWords: "Kiym",
-        },
+    {
+        id: 3,
+        keyWords: "Kiym",
+    },
 
-        {
-            id: 4,
-            keyWords: "Poyabzallar",
-        },
+    {
+        id: 4,
+        keyWords: "Poyabzallar",
+    },
 
-        {
-            id: 5,
-            keyWords: "Aksesuarlar",
-        },
+    {
+        id: 5,
+        keyWords: "Aksesuarlar",
+    },
 
-        {
-            id: 6,
-            keyWords: "Gozallik va parvarish",
-        },
+    {
+        id: 6,
+        keyWords: "Gozallik va parvarish",
+    },
 
-        {
-            id: 7,
-            keyWords: "Salomatlik",
-        },
+    {
+        id: 7,
+        keyWords: "Salomatlik",
+    },
 
-        {
-            id: 8,
-            keyWords: "Yana",
-        },
-    ];
+    {
+        id: 8,
+        keyWords: "Yana",
+    },
+];
 </script>
 
 <template>
@@ -118,7 +118,9 @@
 
                 <RouterLink to="/basket/">
                     <button class="navbar-bag">
-                        <IconBag /> Savat <span class="navbar-totallSum">{{ addBasketStore.basket?.length }}</span>
+                        <IconBag /> Savat
+                        <span v-if="addBasketStore.basket?.length === 0"></span>
+                        <span class="navbar-totallSum" v-else>{{ addBasketStore.basket?.length }}</span>
                     </button>
                 </RouterLink>
             </div>

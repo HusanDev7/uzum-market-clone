@@ -113,7 +113,7 @@
         width: 300px;
         height: 300px;
         border: solid 0.5px #9e9fa5;
-        padding: 10px;
+        padding: 1px 5px;
         border-radius: 4px;
 
         &-box {
@@ -141,6 +141,9 @@
             padding: 6px;
             border: solid 1px #7000ff;
             cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         &-goOrder {
@@ -152,7 +155,7 @@
             background: #7000ff;
             color: #fff;
             cursor: pointer;
-            margin: 40px auto;
+            margin: 40px auto 0;
         }
     }
 }

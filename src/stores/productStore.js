@@ -7,7 +7,7 @@ export const useProductStore = defineStore("product", {
     }),
 
     actions: {
-        async getProduct(skip = 0, limit = 20) {
+        async getProduct(skip = 0, limit = 10) {
             try {
                 const res = await apiProduct.getProduct(skip, limit);
                 this.products = res.products;

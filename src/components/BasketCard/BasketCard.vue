@@ -1,7 +1,7 @@
 <script setup>
-    import { IconDell } from "@/lib/imports";
-    import { useAddBasketStore } from "@/stores/addBasketStore";
-    const addBasketStore = useAddBasketStore();
+import { IconDell } from "@/lib/imports";
+import { useAddBasketStore } from "@/stores/addBasketStore";
+const addBasketStore = useAddBasketStore();
 </script>
 <template>
     <div class="container">
@@ -19,7 +19,8 @@
                             </div>
                             <div class="basket__box-card-mini">
                                 <p class="basket__box-title">{{ item.title }}</p>
-                                <p class="basket__box-txt">Sotuvchi: {{ item.brand }}</p>
+                                <p v-if="item.brand == null">Sotuvchi: nomalum</p>
+                                <p class="basket__box-txt" v-else>Sotuvchi: {{ item.brand }}</p>
                             </div>
                             <div class="basket__box-card-mini">
                                 <div class="basket__box-counter">
