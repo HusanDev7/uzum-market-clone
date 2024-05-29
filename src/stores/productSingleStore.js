@@ -15,6 +15,5 @@ export const useProductSingleStore = defineStore("productSingle", {
                 console.error(error);
             }
         },
-
     },
 });

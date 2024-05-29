@@ -37,7 +37,7 @@ const toggleActive = () => {
                 <p class="card__price">{{ card.price }} 000 so'm</p>
             </div>
             <div class="card__box-item">
-                <span class="card__bag" @click="addBasketStore.getAddBasket(card.id)">
+                <span class="card__bag" @click="addBasketStore.getAddBasket(card)">
                     <IconaddBag />
                 </span>
             </div>
