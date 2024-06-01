@@ -69,7 +69,8 @@ const category = [
                         </span>
                         <p class="navbar__top-city">Shahar:</p>
                         <p class="navbar__top-city-name">Toshkent</p>
-                        <a href="https://uzum.uz/uz/about/delivery-points" class="navbar__top-getZone">Topshirish punktlari</a>
+                        <a href="https://uzum.uz/uz/about/delivery-points" class="navbar__top-getZone">Topshirish
+                            punktlari</a>
                     </div>
                 </div>
                 <div class="navbar__top-item">
@@ -109,11 +110,15 @@ const category = [
             </div>
 
             <div class="navbar-item2">
-                <RouterLink to="/entrance/">
-                    <button class="navbar-sign"><IconPerson /> Kirish</button>
+                <RouterLink to="#!">
+                    <button class="navbar-sign">
+                        <IconPerson /> Kirish
+                    </button>
                 </RouterLink>
                 <RouterLink to="/favorite/">
-                    <button class="navbar-fav"><IconNavHeard /> Saralangan</button>
+                    <button class="navbar-fav">
+                        <IconNavHeard /> Saralangan
+                    </button>
                 </RouterLink>
 
                 <RouterLink to="/basket/">

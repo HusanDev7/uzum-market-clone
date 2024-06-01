@@ -16,12 +16,6 @@ const router = createRouter({
     },
 
     {
-      path: "/entrance/",
-      name: "entrance",
-      component: () => import("@/pages/EnterPage.vue"),
-    },
-
-    {
       path: "/favorite/",
       name: "favorite",
       component: () => import("@/pages/FavoritePage.vue"),
