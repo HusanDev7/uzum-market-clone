@@ -1,10 +1,9 @@
 .card__wrapper {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(255px, 320px));
     gap: 30px;
-    justify-content: center;
-    align-content: center;
     margin-top: 70px;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
 }
 
 .card {

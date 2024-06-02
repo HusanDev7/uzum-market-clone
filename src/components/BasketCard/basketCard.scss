@@ -61,7 +61,7 @@
         }
 
         &-txt {
-            font-size: #8b8e99;
+            color: #8b8e99;
             font-size: 14px;
             font-weight: 400;
         }
@@ -115,6 +115,8 @@
         border: solid 0.5px #9e9fa5;
         padding: 1px 5px;
         border-radius: 4px;
+        position: sticky;
+        top: 10px;
 
         &-box {
             display: flex;

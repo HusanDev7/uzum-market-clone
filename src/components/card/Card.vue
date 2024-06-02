@@ -30,7 +30,9 @@ const toggleActive = () => {
         <p class="card__title">
             {{ card.title }}
         </p>
-        <p class="card__status"><IconStar /> {{ card.rating }} (sharhlar)</p>
+        <p class="card__status">
+            <IconStar /> {{ card.rating }} (sharhlar)
+        </p>
         <div class="card__box">
             <div class="card__box-item">
                 <p class="card__salle">{{ card.discountPercentage }} 000 so'm</p>
