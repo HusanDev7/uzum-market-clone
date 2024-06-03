@@ -13,11 +13,19 @@ const productSingleStore = useProductSingleStore();
     <div class="basket">
       <div class="basket__box">
         <div class="basket__box-line-over">
-          <div class="basket__box-box" v-for="item in addBasketStore.basket" :key="item.id">
+          <div
+            class="basket__box-box"
+            v-for="item in addBasketStore.basket"
+            :key="item.id"
+          >
             <span class="basket__box-line"></span>
             <div class="basket__box-card">
               <div class="basket__box-card-mini">
-                <img class="basket__box-img" :src="item.thumbnail ?? '@/assets/img/no-photo.jpg'" alt="" />
+                <img
+                  class="basket__box-img"
+                  :src="item.thumbnail ?? '@/assets/img/no-photo.jpg'"
+                  alt=""
+                />
               </div>
               <div class="basket__box-card-mini">
                 <p class="basket__box-title">{{ item.title }}</p>
@@ -26,18 +34,31 @@ const productSingleStore = useProductSingleStore();
               </div>
               <div class="basket__box-card-mini">
                 <div class="basket__box-counter">
-                  <span class="basket__box-counter-decrement" @click="addBasketStore.decrementQ(item.id)">-</span>
+                  <span
+                    class="basket__box-counter-decrement"
+                    @click="addBasketStore.decrementQ(item.id)"
+                    >-</span
+                  >
                   <span class="basket__box-counter-count">{{
-        item.quantity
-      }}</span>
-                  <span class="basket__box-counter-increment" @click="addBasketStore.incrementQ(item.id)">+</span>
+                    item.quantity
+                  }}</span>
+                  <span
+                    class="basket__box-counter-increment"
+                    @click="addBasketStore.incrementQ(item.id)"
+                    >+</span
+                  >
                 </div>
               </div>
               <div class="basket__box-card-mini2">
-                <span class="basket__box-dell" @click="addBasketStore.removeProduct(item.id)">
+                <span
+                  class="basket__box-dell"
+                  @click="addBasketStore.removeProduct(item.id)"
+                >
                   <IconDell /> Yo'q qilish
                 </span>
-                <span class="basket__box-price">{{ item.price * item.quantity }} 000 so'm</span>
+                <span class="basket__box-price"
+                  >{{ item.price * item.quantity }} 000 so'm</span
+                >
               </div>
             </div>
           </div>
@@ -57,7 +78,9 @@ const productSingleStore = useProductSingleStore();
             </p>
           </div>
         </div>
-        <span class="basket-order-delivary">Yetkazib berish M05 27 (Ertaga)</span>
+        <span class="basket-order-delivary"
+          >Yetkazib berish M05 27 (Ertaga)</span
+        >
         <div class="basket-order-prices">
           <p class="basket-order-prices-title">Jami:</p>
           <p class="basket-order-prices-price">

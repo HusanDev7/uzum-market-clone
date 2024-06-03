@@ -40,14 +40,28 @@
             justify-content: space-between;
             align-items: center;
             gap: 60px;
-
-            &-mini2 {
-                display: flex;
-                align-items: center;
-                flex-direction: column;
-                gap: 30px;
-            }
+            width: 800px;
+            height: 150px;
         }
+
+        &-card-mini {
+            width: 200px;
+            height: 100px;
+            overflow: hidden;
+        }
+
+        &-card-mini2 {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            gap: 10px;
+            width: 200px;
+            height: 100px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
         &-img {
             width: 120px;
             height: 120px;
@@ -58,12 +72,18 @@
             font-weight: 500;
             color: #1f2026;
             padding: 25px 0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         &-txt {
             color: #8b8e99;
             font-size: 14px;
             font-weight: 400;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         &-counter {
@@ -76,18 +96,14 @@
             gap: 20px;
             border: solid 1px #8b8e99;
 
-            &-decrement {
-                font-size: 32px;
-                font-weight: 500;
-                cursor: pointer;
-            }
-
+            &-decrement,
             &-increment {
                 font-size: 32px;
                 font-weight: 500;
                 cursor: pointer;
             }
         }
+
         &-dell {
             display: flex;
             align-items: center;

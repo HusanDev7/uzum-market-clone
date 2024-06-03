@@ -33,7 +33,7 @@ productSingleStore.getSingleProduct(route.params.id);
             </div>
             <div class="product__box-mini">
               <span class="product__box-mini-fav">
-                <IconHeard :size="16 && 16" />
+                <IconHeard class="product__box-mini-fav-heard" :size="16 && 16" />
               </span>
               <span class="product__box-txt-fav">Istaklarga</span>
             </div>
