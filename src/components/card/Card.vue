@@ -1,8 +1,11 @@
 <script setup>
 import { IconaddBag, IconHeard, IconStar } from "@/lib/imports";
+import { useFavoriteStore } from "@/stores/addFavoriteStore";
 import { useAddBasketStore } from "@/stores/addBasketStore";
 import { ref } from "vue";
 const addBasketStore = useAddBasketStore();
+
+const favroriteStore = useFavoriteStore()
 
 const props = defineProps({
     card: {
@@ -19,7 +22,7 @@ const toggleActive = () => {
 </script>
 <template>
     <div class="card">
-        <span class="card__heard" @click="toggleActive">
+        <span class="card__heard" @click=" favroriteStore.addFavStore(card), toggleActive()">
             <IconHeard class="card__heard-heard" :class="{ active: isActive }" />
         </span>
         <div class="card__img-box">
