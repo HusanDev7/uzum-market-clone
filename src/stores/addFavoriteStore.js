@@ -12,5 +12,5 @@ export const useFavoriteStore = defineStore("favorite", {
             this.favorite.push(addFav)
         }
     },
-    persist: true
+    // persist: true;
 })
