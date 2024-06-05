@@ -36,7 +36,7 @@ const productSingleStore = useProductSingleStore();
                 <div class="basket__box-counter">
                   <span
                     class="basket__box-counter-decrement"
-                    @click="addBasketStore.decrementQ(item.id)"
+                    @click="addBasketStore.decrementQ(item)"
                     >-</span
                   >
                   <span class="basket__box-counter-count">{{
@@ -44,7 +44,7 @@ const productSingleStore = useProductSingleStore();
                   }}</span>
                   <span
                     class="basket__box-counter-increment"
-                    @click="addBasketStore.incrementQ(item.id)"
+                    @click="addBasketStore.incrementQ(item)"
                     >+</span
                   >
                 </div>

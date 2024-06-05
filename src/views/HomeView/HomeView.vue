@@ -5,6 +5,8 @@ import Card from "@/components/card/Card.vue";
 import { useProductStore } from "@/stores/productStore";
 const productStore = useProductStore();
 productStore.getProduct();
+
+
 </script>
 <template>
     <div class="container">

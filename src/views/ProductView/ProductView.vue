@@ -33,7 +33,10 @@ productSingleStore.getSingleProduct(route.params.id);
             </div>
             <div class="product__box-mini">
               <span class="product__box-mini-fav">
-                <IconHeard class="product__box-mini-fav-heard" :size="16 && 16" />
+                <IconHeard
+                  class="product__box-mini-fav-heard"
+                  :size="16 && 16"
+                />
               </span>
               <span class="product__box-txt-fav">Istaklarga</span>
             </div>
@@ -56,9 +59,7 @@ productSingleStore.getSingleProduct(route.params.id);
                 >
                 <span class="product__count">
                   {{
-                    addBasketStore.basket.find(
-                      (item) => item.id === productSingleStore.product?.id
-                    )?.quantity || 1
+                    productSingleStore.product?.quantity
                   }}
                 </span>
                 <span

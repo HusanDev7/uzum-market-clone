@@ -10,7 +10,7 @@ export const useProductSingleStore = defineStore("productSingle", {
         async getSingleProduct(id) {
             try {
                 const res = await apiProduct.getSingleProduct(id);
-                this.product = res;
+                this.product = { ...res, quantity: 1 };
             } catch (error) {
                 console.error(error);
             }

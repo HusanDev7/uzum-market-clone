@@ -1,5 +1,5 @@
 import { defineStore } from "pinia";
-import { useProductStore } from "./productStore";
+// import { useProductStore } from "./productStore";
 
 export const useAddBasketStore = defineStore("addBasket", {
     state: () => ({
@@ -8,14 +8,16 @@ export const useAddBasketStore = defineStore("addBasket", {
 
     actions: {
         getAddBasket(card) {
-            const productStore = useProductStore();
-            const basketProduct = productStore.products?.find((item) => item.id == card.id);
+            console.log(card);
 
-            if (basketProduct) {
-                const existingProduct = this.basket.find((item) => item.id == card.id);
-                if (!existingProduct) {
-                    this.basket.push({ ...basketProduct, quantity: 1 });
-                }
+            const basketObj = this.basket?.find(item => item.id == card.id)
+            const basketIndex = this.basket?.findIndex(item => item.id == card.id)
+
+            if (card.id == basketObj?.id) {
+                this.basket[basketIndex].quantity += card.quantity
+            } else {
+                this.basket.push(card)
+
             }
         },
 
@@ -27,20 +29,17 @@ export const useAddBasketStore = defineStore("addBasket", {
         },
 
         incrementQ(card) {
-            const index = this.basket.findIndex((item) => item.id === card);
-            if (index !== -1) {
-                this.basket[index].quantity += 1;
+            if (card.quantity < card.minimumOrderQuantity) {
+                card.quantity += 1;
             }
+
         },
 
         decrementQ(card) {
-            const index = this.basket.findIndex((item) => item.id === card.id);
-            if (index !== -1) {
-                if (this.basket[index].quantity > 1) {
-                    this.basket[index].quantity -= 1;
-                }
+            if (card.quantity > 1) {
+                card.quantity -= 1;
             }
-        }
+        },
     },
 
     getters: {
@@ -48,5 +47,5 @@ export const useAddBasketStore = defineStore("addBasket", {
             return this.basket.reduce((sum, product) => sum + (product.price || 0) * product.quantity, 0)
         }
     },
-    persist: true
+    persist: true,
 });

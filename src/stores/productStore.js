@@ -5,13 +5,11 @@ export const useProductStore = defineStore("product", {
     state: () => ({
         products: null,
     }),
-
     actions: {
         async getProduct(skip = 0, limit = 10) {
             try {
                 const res = await apiProduct.getProduct(skip, limit);
                 this.products = res.products;
-                // console.log(res);
             } catch (error) {
                 console.error(error);
             }
