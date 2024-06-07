@@ -20,7 +20,7 @@ const setThumbsSwiper = (swiper) => {
 <template>
   <div>
     <swiper
-      v-if="productSingleStore.product?.images.length"
+      v-if="productSingleStore.product?.images.length > 1"
       :spaceBetween="10"
       :navigation="true"
       :thumbs="{ swiper: thumbsSwiper }"
@@ -35,7 +35,7 @@ const setThumbsSwiper = (swiper) => {
       </swiper-slide>
     </swiper>
     <swiper
-      v-if="productSingleStore.product?.images.length"
+      v-if="productSingleStore.product?.images.length > 1"
       @swiper="setThumbsSwiper"
       :spaceBetween="10"
       :slidesPerView="4"
@@ -51,8 +51,12 @@ const setThumbsSwiper = (swiper) => {
         <img :src="image" />
       </swiper-slide>
     </swiper>
+    <div v-else>
+      <img :src="productSingleStore.product?.images[0]" />
+    </div>
   </div>
 </template>
+
 <style scoped>
 .swiper {
   width: 650px;

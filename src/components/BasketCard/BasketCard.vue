@@ -1,9 +1,25 @@
 <script setup>
+import { ref } from "vue";
 import { IconDell } from "@/lib/imports";
 import { useAddBasketStore } from "@/stores/addBasketStore";
 import { useProductSingleStore } from "@/stores/productSingleStore";
 const addBasketStore = useAddBasketStore();
 const productSingleStore = useProductSingleStore();
+
+const hour = ref("");
+const minut = ref("");
+const secont = ref("");
+
+const time = () => {
+  const localDate = new Date();
+  hour.value = (localDate.getHours() < 10 ? "0" : "") + localDate.getHours();
+  minut.value =
+    (localDate.getMinutes() < 10 ? "0" : "") + localDate.getMinutes();
+  secont.value =
+    (localDate.getSeconds() < 10 ? "0" : "") + localDate.getSeconds();
+};
+
+setInterval(() => time(), 1000);
 </script>
 <template>
   <div class="container">
@@ -79,7 +95,7 @@ const productSingleStore = useProductSingleStore();
           </div>
         </div>
         <span class="basket-order-delivary"
-          >Yetkazib berish M05 27 (Ertaga)</span
+          >Yetkazib berish M05 27 {{ hour }}:{{ minut }}:{{ secont }}</span
         >
         <div class="basket-order-prices">
           <p class="basket-order-prices-title">Jami:</p>
