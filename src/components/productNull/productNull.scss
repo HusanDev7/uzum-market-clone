@@ -1,0 +1,25 @@
+.no-product {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 70px auto;
+    & img {
+        width: 128px;
+        height: 128px;
+        margin: 10px 0;
+    }
+
+    &-title {
+        font-size: 22px;
+        font-weight: 500;
+        color: #1f2026;
+        margin: 10px 0;
+    }
+
+    &-txt {
+        font-size: 12px;
+        font-weight: 400;
+        color: #1f2026;
+    }
+}
