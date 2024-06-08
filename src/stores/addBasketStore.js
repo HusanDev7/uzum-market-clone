@@ -8,19 +8,19 @@ export const useAddBasketStore = defineStore("addBasket", {
 
     actions: {
         getAddBasket(card) {
-            console.log(card);
-
+            // console.log(card);
             const basketObj = this.basket?.find(item => item.id == card.id)
             const basketIndex = this.basket?.findIndex(item => item.id == card.id)
 
             if (card.id == basketObj?.id) {
                 this.basket[basketIndex].quantity += card.quantity
             } else {
+                if (card.quantity === undefined) {
+                    card.quantity = 1;
+                }
                 this.basket.push(card)
-
             }
         },
-
         removeProduct(card) {
             const index = this.basket.findIndex((item) => item.id === card)
             if (index !== -1) {

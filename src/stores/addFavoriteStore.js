@@ -4,18 +4,20 @@ import { useProductStore } from "./productStore";
 export const useFavoriteStore = defineStore("favorite", {
     state: () => ({
         favorite: [],
-        drawer: false,
+
     }),
     actions: {
         addFavStore(card) {
             const productStore = useProductStore();
-            const addFav = productStore.products?.find((item) => item.id == card.id);
-            this.favorite.push(addFav);
+            const index = this.favorite.findIndex((item) => item.id === card.id);
+            if (index !== -1) {
+                this.favorite.splice(index, 1);
+            } else {
+                const addFav = productStore.products.find((item) => item.id === card.id);
+                this.favorite.push(addFav);
+            }
         },
 
-        toggleDrawer(e) {
-            this.drawer = e;
-        },
     },
-    // persist: true
+    persist: true,
 });

@@ -1,136 +1,135 @@
 .card__wrapper {
-    display: grid;
-    gap: 30px;
-    margin-top: 70px;
-    grid-template-columns: repeat(5, 222px);
-    justify-items: center;
+  display: grid;
+  gap: 30px;
+  margin-top: 70px;
+  grid-template-columns: repeat(5, 222px);
+  justify-items: center;
+  align-items: center;
 }
 
 .card {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    width: 232px; 
-    height: 440px; 
-    border-radius: 2px;
-    cursor: pointer;
-    margin: 40px 0 0 0;
-    color: #1f2026;
-    transition:
-        box-shadow 0.3s ease,
-        transform 0.3s ease;
-    overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 232px;
+  height: 440px;
+  border-radius: 2px;
+  cursor: pointer;
+  margin: 40px 0 0 0;
+  color: #1f2026;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  overflow: hidden;
 }
 
 .card:hover {
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-    transform: scale(1.05);
-    border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
+  border-radius: 5px;
 }
 
 .card__heard {
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    cursor: pointer;
-    z-index: 99;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+  z-index: 99;
 
-    &-heard {
-        transition: transform 0.3s ease;
+  &-heard {
+    transition: transform 0.3s ease;
 
-        & path {
-            fill: transparent;
-            stroke: rgba(0, 0, 0, 0.7);
-        }
-
-        &.active path {
-            stroke: #7000ff;
-            fill: #7000ff;
-        }
+    & path {
+      fill: transparent;
+      stroke: rgba(0, 0, 0, 0.7);
     }
 
-    &:hover .card__heard-heard {
-        transform: scale(1.2);
+    &.active path {
+      stroke: #7000ff;
+      fill: #7000ff;
     }
+  }
+
+  &:hover .card__heard-heard {
+    transform: scale(1.2);
+  }
 }
 
 .card__img-box {
-    position: relative;
-    width: 100%;
-    height: 309px;
-    background: rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
-    overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 309px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  overflow: hidden;
 }
 
 .card__img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    mix-blend-mode: color-burn;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  mix-blend-mode: color-burn;
 }
 
 .card__title {
-    font-size: 21px;
-    color: #1f2026;
-    font-weight: 500;
-    margin: 10px 7px 0 7px;
-    white-space: nowrap;
-    overflow: hidden; 
-    text-overflow: ellipsis; 
+  font-size: 21px;
+  color: #1f2026;
+  font-weight: 500;
+  margin: 10px 7px 0 7px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .card__status {
-    display: flex;
-    align-items: center;
-    font-size: 11px;
-    color: #8b8e99;
-    margin: 5px 7px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+  display: flex;
+  align-items: center;
+  font-size: 11px;
+  color: #8b8e99;
+  margin: 5px 7px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .card__box {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 7px;
-    margin-top: 15px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 7px;
+  margin-top: 15px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .card__salle {
-    font-size: 11px;
-    color: #8b8e99;
-    text-decoration: line-through;
-    font-weight: 500;
-    padding: 5px 0;
-    overflow: hidden;
-    text-overflow: ellipsis;
+  font-size: 11px;
+  color: #8b8e99;
+  text-decoration: line-through;
+  font-weight: 500;
+  padding: 5px 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .card__price {
-    font-size: 14px;
-    color: #1f2026;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+  font-size: 14px;
+  color: #1f2026;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .card__bag {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    padding: 5px 5px 5px;
-    border: solid 1px #8b8e99;
-    transition: 0.3s ease;
-    z-index: 99;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  padding: 5px 5px 5px;
+  border: solid 1px #8b8e99;
+  transition: 0.3s ease;
+  z-index: 99;
 }
 
 .card__bag:hover {
-    background: #8b8e99;
+  background: #dee1ed;
 }
