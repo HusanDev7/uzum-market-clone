@@ -28,7 +28,12 @@
         align-items: center;
         gap: 30px;
       }
+    }
 
+    &-selected {
+      display: flex;
+      align-items: center;
+      gap: 5px;
     }
 
     &-icon {
@@ -111,8 +116,9 @@
 
       &-link {
         display: flex;
+        align-items: center;
         cursor: pointer;
-        margin: 0 5px 0 0;
+        gap: 5px;
       }
     }
   }
@@ -176,6 +182,7 @@
     color: #1F2026;
     background: transparent;
     transition: 0.4s;
+
     &:hover {
       background: #e6e8ed;
     }

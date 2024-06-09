@@ -17,6 +17,15 @@ const images = [
     { src: import("@/assets/img/swipper-slide5.jpg") },
     { src: import("@/assets/img/swipper-slide6.jpg") },
     { src: import("@/assets/img/swipper-slide7.jpg") },
+    { src: import("@/assets/img/swipper-slide8.jpg") },
+    { src: import("@/assets/img/swipper-slide9.jpg") },
+    { src: import("@/assets/img/swipper-slide10.jpg") },
+    { src: import("@/assets/img/swipper-slide11.jpg") },
+    { src: import("@/assets/img/swipper-slide12.jpg") },
+    { src: import("@/assets/img/swipper-slide13.jpg") },
+    { src: import("@/assets/img/swipper-slide14.jpg") },
+    { src: import("@/assets/img/swipper-slide15.jpg") },
+    { src: import("@/assets/img/swipper-slide16.jpg") },
 ];
 
 const resolvedImages = ref([]);
@@ -30,17 +39,9 @@ Promise.all(
 
 <template>
     <div class="container">
-        <swiper
-            :slidesPerView="1"
-            :spaceBetween="30"
-            :loop="true"
-            :pagination="{
-                clickable: true,
-            }"
-            :navigation="true"
-            :modules="modules"
-            class="mySwiper"
-        >
+        <swiper :slidesPerView="1" :spaceBetween="30" :loop="true" :pagination="{
+            clickable: true,
+        }" :navigation="true" :modules="modules" class="mySwiper">
             <swiper-slide v-for="(image, index) in resolvedImages" :key="index">
                 <img :src="image" alt="" />
             </swiper-slide>

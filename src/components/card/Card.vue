@@ -18,6 +18,7 @@ const props = defineProps({
 const adds = computed(() =>
   favroriteStore.favorite.find((item) => item.id == props.card.id)
 );
+
 </script>
 <template>
   <div class="card">

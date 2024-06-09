@@ -1,12 +1,13 @@
 <script setup>
-    import Swiper from "@/components/swipper/Swipper.vue";
-    import Card from "@/components/card/Card.vue";
-    import ProductNull from "@/components/productNull/ProductNull.vue";
-
-    import { useProductStore } from "@/stores/productStore";
-    const productStore = useProductStore();
-    productStore.getProduct();
+import { useProductStore } from "@/stores/productStore";
+import Swiper from "@/components/swipper/Swipper.vue";
+import Card from "@/components/card/Card.vue";
+import ProductNull from "@/components/productNull/ProductNull.vue";
+// ///////////////////////////////////////////////////////////////////
+const productStore = useProductStore();
+productStore.getProduct();
 </script>
+
 <template>
     <div class="container">
         <div class="wrapper" v-if="productStore.totalCount > 0">

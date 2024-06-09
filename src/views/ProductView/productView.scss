@@ -17,6 +17,11 @@
         }
     }
 
+    &__imgs {
+        width: 100%;
+        max-width: 600px;
+    }
+
     &__box {
         display: flex;
         align-items: center;
@@ -31,6 +36,25 @@
                 display: flex;
                 align-items: center;
                 cursor: pointer;
+
+                &-heard {
+                    transition: transform 0.3s ease;
+
+                    & path {
+                        fill: transparent;
+                        stroke: rgba(0, 0, 0, 0.7);
+                    }
+
+                    &.active path {
+                        stroke: #7000ff;
+                        fill: #7000ff;
+                    }
+                }
+
+                &:hover .product__box-mini-fav-heard {
+                    transform: scale(1.2);
+                }
+
             }
         }
 

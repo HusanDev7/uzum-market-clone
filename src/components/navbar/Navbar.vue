@@ -1,72 +1,43 @@
 <script setup>
-    import { IconLocation, IconUzbekistan, IconRussian, IconLogo, IconPerson, IconHeard, IconBag, IconSearch, IconNavHeard } from "@/lib/imports";
-    // imports
+import { IconLocation, IconUzbekistan, IconRussian, IconLogo, IconPerson, IconHeard, IconBag, IconSearch, IconNavHeard } from "@/lib/imports";
+// imports
+import { ref } from "vue";
+import { useAddBasketStore } from "@/stores/addBasketStore";
+import { useProductStore } from "@/stores/productStore";
+const productStore = useProductStore();
+const addBasketStore = useAddBasketStore();
 
-    import { useAddBasketStore } from "@/stores/addBasketStore";
-    import { useProductStore } from "@/stores/productStore";
-    const productStore = useProductStore();
+const dropdownActive = ref(false);
+const searchFilter = ref("");
 
-    const addBasketStore = useAddBasketStore();
+const category = [
+    { id: 1, keyWords: "Elektronika", },
 
-    import { ref } from "vue";
-    import { useRoute } from "vue-router";
+    { id: 2, keyWords: "Maishiy texnika", },
 
-    const dropdownActive = ref(false);
+    { id: 3, keyWords: "Kiym", },
 
-    const toggleDropdown = () => {
-        dropdownActive.value = !dropdownActive.value;
-    };
+    { id: 4, keyWords: "Poyabzallar", },
 
-    const category = [
-        {
-            id: 1,
-            keyWords: "Elektronika",
-        },
+    { id: 5, keyWords: "Aksesuarlar", },
 
-        {
-            id: 2,
-            keyWords: "Maishiy texnika",
-        },
+    { id: 6, keyWords: "Gozallik va parvarish", },
 
-        {
-            id: 3,
-            keyWords: "Kiym",
-        },
+    { id: 7, keyWords: "Salomatlik", },
 
-        {
-            id: 4,
-            keyWords: "Poyabzallar",
-        },
+    { id: 8, keyWords: "Yana", },
+];
 
-        {
-            id: 5,
-            keyWords: "Aksesuarlar",
-        },
+const toggleDropdown = () => {
+    dropdownActive.value = !dropdownActive.value;
+};
 
-        {
-            id: 6,
-            keyWords: "Gozallik va parvarish",
-        },
-
-        {
-            id: 7,
-            keyWords: "Salomatlik",
-        },
-
-        {
-            id: 8,
-            keyWords: "Yana",
-        },
-    ];
-
-    const searchFilter = ref("");
-
-    const search = () => {
-        productStore.getSearch(searchFilter.value);
-        if (productStore.getSearch(searchFilter.value)) {
-            searchFilter.value = "";
-        }
-    };
+const search = () => {
+    productStore.getSearch(searchFilter.value);
+    if (productStore.getSearch(searchFilter.value)) {
+        searchFilter.value = "";
+    }
+};
 </script>
 
 <template>
@@ -80,7 +51,8 @@
                         </span>
                         <p class="navbar__top-city">Shahar:</p>
                         <p class="navbar__top-city-name">Toshkent</p>
-                        <a href="https://uzum.uz/uz/about/delivery-points" class="navbar__top-getZone">Topshirish punktlari</a>
+                        <a href="https://uzum.uz/uz/about/delivery-points" class="navbar__top-getZone">Topshirish
+                            punktlari</a>
                     </div>
                 </div>
                 <div class="navbar__top-item">
@@ -92,13 +64,13 @@
                         <div class="navbar__top-dropdown">
                             <div class="navbar__top-sellect" @click="toggleDropdown">
                                 <span class="navbar__top-selected">
-                                    <IconUzbekistan :size="20" @click="showLangueage('uz')" />
+                                    <IconUzbekistan :size="20" />
                                     O'zbekcha
                                 </span>
                             </div>
                             <ul class="navbar__top-menu" :class="{ active: dropdownActive }">
                                 <li class="navbar__top-menu-link">
-                                    <IconRussian :size="20" @click="showLangueage('ru')" />
+                                    <IconRussian :size="20" />
                                     Русский
                                 </li>
                             </ul>
@@ -115,21 +87,21 @@
                 <IconLogo :size="215 && 32" />
             </RouterLink>
             <div class="navbar-item">
-                <input
-                    class="navbar-search"
-                    v-model="searchFilter"
-                    @keydown.enter="search"
-                    type="text"
+                <input class="navbar-search" v-model="searchFilter" @keydown.enter="search" type="text"
                     placeholder="Mahsulotlar va turkumlar izlash" />
                 <IconSearch @click="search" />
             </div>
 
             <div class="navbar-item2">
                 <RouterLink to="#!">
-                    <button class="navbar-sign"><IconPerson /> Kirish</button>
+                    <button class="navbar-sign">
+                        <IconPerson /> Kirish
+                    </button>
                 </RouterLink>
                 <RouterLink to="/favorite/">
-                    <button class="navbar-fav"><IconNavHeard /> Saralangan</button>
+                    <button class="navbar-fav">
+                        <IconNavHeard /> Saralangan
+                    </button>
                 </RouterLink>
 
                 <RouterLink to="/basket/">

@@ -19,35 +19,15 @@ const setThumbsSwiper = (swiper) => {
 
 <template>
   <div>
-    <swiper
-      v-if="productSingleStore.product?.images.length > 1"
-      :spaceBetween="10"
-      :navigation="true"
-      :thumbs="{ swiper: thumbsSwiper }"
-      :modules="modules"
-      class="mySwiper2"
-    >
-      <swiper-slide
-        v-for="(image, index) in productSingleStore.product?.images"
-        :key="index"
-      >
+    <swiper v-if="productSingleStore.product?.images.length > 1" :spaceBetween="10" :navigation="true"
+      :thumbs="{ swiper: thumbsSwiper }" :modules="modules" class="mySwiper2">
+      <swiper-slide v-for="(image, index) in productSingleStore.product?.images" :key="index">
         <img :src="image" />
       </swiper-slide>
     </swiper>
-    <swiper
-      v-if="productSingleStore.product?.images.length > 1"
-      @swiper="setThumbsSwiper"
-      :spaceBetween="10"
-      :slidesPerView="4"
-      :freeMode="true"
-      :watchSlidesProgress="true"
-      :modules="modules"
-      class="mySwiper"
-    >
-      <swiper-slide
-        v-for="(image, index) in productSingleStore.product?.images"
-        :key="index"
-      >
+    <swiper v-if="productSingleStore.product?.images.length > 1" @swiper="setThumbsSwiper" :spaceBetween="10"
+      :slidesPerView="4" :freeMode="true" :watchSlidesProgress="true" :modules="modules" class="mySwiper">
+      <swiper-slide v-for="(image, index) in productSingleStore.product?.images" :key="index">
         <img :src="image" />
       </swiper-slide>
     </swiper>

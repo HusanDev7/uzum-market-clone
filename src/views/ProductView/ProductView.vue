@@ -1,15 +1,26 @@
 <script setup>
-import { useProductSingleStore } from "@/stores/productSingleStore";
+import { computed, ref, watch } from "vue";
 import { useRoute } from "vue-router";
+import { useProductSingleStore } from "@/stores/productSingleStore";
+import { useAddBasketStore } from "@/stores/addBasketStore";
+import { useFavoriteStore } from "@/stores/addFavoriteStore";
 import ProductSwipper from "@/components/productSwipper/ProductSwipper.vue";
 import { IconStar, IconHeard } from "@/lib/imports";
-import { useAddBasketStore } from "@/stores/addBasketStore";
 
+const favroriteStore = useFavoriteStore();
 const addBasketStore = useAddBasketStore();
 const route = useRoute();
 const productSingleStore = useProductSingleStore();
 
 productSingleStore.getSingleProduct(route.params.id);
+
+const adds = computed(() => {
+  if (!productSingleStore.product || !favroriteStore.favorite) {
+    return false;
+  }
+  return favroriteStore.favorite.some(item => item.id === productSingleStore.product.id);
+});
+
 </script>
 
 <template>
@@ -27,18 +38,13 @@ productSingleStore.getSingleProduct(route.params.id);
                 {{ productSingleStore.product?.rating }}
               </span>
               <span class="product__box-txt">(baho)</span>
-              <span class="product__box-txt"
-                >{{ productSingleStore.product?.stock }} Buyurtma</span
-              >
+              <span class="product__box-txt">{{ productSingleStore.product?.stock }} Buyurtma</span>
             </div>
             <div class="product__box-mini">
-              <span class="product__box-mini-fav">
-                <IconHeard
-                  class="product__box-mini-fav-heard"
-                  :size="16 && 16"
-                />
+              <span class="product__box-mini-fav" @click="favroriteStore.addFavStore(productSingleStore.product);">
+                <IconHeard class="product__box-mini-fav-heard" :class="{ active: !!adds }" :size="16 && 16" />
               </span>
-              <span class="product__box-txt-fav">Istaklarga</span>
+              <span class="product__box-txt-fav">{{ adds ? "Istaklarda" : "Istaklarga" }}</span>
             </div>
           </div>
           <div class="product__desc">
@@ -52,27 +58,19 @@ productSingleStore.getSingleProduct(route.params.id);
             <h4 class="product__conter-title">Miqdor:</h4>
             <div class="product__prices-count">
               <div class="product__counter">
-                <span
-                  class="product__counter-decrement"
-                  @click="addBasketStore.decrementQ(productSingleStore.product)"
-                  >-</span
-                >
+                <span class="product__counter-decrement"
+                  @click="addBasketStore.decrementQ(productSingleStore.product)">-</span>
                 <span class="product__count">
                   {{
-                    productSingleStore.product?.quantity
-                  }}
+                  productSingleStore.product?.quantity
+                }}
                 </span>
-                <span
-                  class="product__counter-increment"
-                  @click="addBasketStore.incrementQ(productSingleStore.product)"
-                  >+</span
-                >
+                <span class="product__counter-increment"
+                  @click="addBasketStore.incrementQ(productSingleStore.product)">+</span>
               </div>
-              <span class="product__prices-count-quantity"
-                >Sotuvda
+              <span class="product__prices-count-quantity">Sotuvda
                 {{ productSingleStore.product?.minimumOrderQuantity }} dona
-                bor</span
-              >
+                bor</span>
             </div>
           </div>
 
@@ -80,23 +78,18 @@ productSingleStore.getSingleProduct(route.params.id);
             <h4 class="product__price-title">Narx:</h4>
             <h3 class="product__price-price">
               {{
-                productSingleStore.product?.price *
-                (addBasketStore.basket.find(
-                  (item) => item.id === productSingleStore.product?.id
-                )?.quantity || 1)
-              }}
+                  productSingleStore.product?.price *
+                  (addBasketStore.basket.find(
+                    (item) => item.id === productSingleStore.product?.id
+                  )?.quantity || 1)
+                }}
               000 So'm
             </h3>
           </div>
 
           <div class="product__btns">
-            <button
-              class="product__btns-btn"
-              @click="addBasketStore.getAddBasket(productSingleStore.product)"
-            >
-              <RouterLink to="#!" class="product__btns-btn-link1"
-                >Savatga qoshish</RouterLink
-              >
+            <button class="product__btns-btn" @click="addBasketStore.getAddBasket(productSingleStore.product)">
+              <RouterLink to="#!" class="product__btns-btn-link1">Savatga qoshish</RouterLink>
             </button>
             <button class="product__btns-btn-order">
               <RouterLink to="/" class="product__btns-btn-order-link">
