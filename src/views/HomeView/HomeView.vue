@@ -15,6 +15,9 @@ productStore.getProduct();
             <div class="card__wrapper">
                 <Card v-for="item in productStore.products" :key="item.id" :card="item" />
             </div>
+            <div class="btn__box">
+            <button class="btn">Yana Ko'rsatish 20</button>
+            </div>
         </div>
         <div class="product" v-else>
             <ProductNull />
