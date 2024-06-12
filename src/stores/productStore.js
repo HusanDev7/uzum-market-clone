@@ -7,15 +7,19 @@ export const useProductStore = defineStore("product", {
         totalCount: null,
     }),
     actions: {
-        async getProduct(skip = 0, limit = 20) {
-            try {
-                const res = await apiProduct.getProduct(skip, limit);
-                this.products = res.products;
-                this.totalCount = res.total;
-            } catch (error) {
-                console.error(error);
-            }
-        },
+         async getProduct(skip = 0, limit = 20) {
+      try {
+        const res = await apiProduct.getProduct(skip, limit);
+        if (skip === 0) {
+          this.products = res.products;
+        } else {
+          this.products.push(...res.products);
+        }
+        this.totalCount = res.total;
+      } catch (error) {
+        console.error(error);
+      }
+    },
 
         async getSearch(search) {
             try {
