@@ -1,5 +1,22 @@
 {
-    "massage":{
-        "citys": "горада"
-    }
+  "citys": "Город",
+  "city-name": "Ташкент",
+  "give-zone": "Пункты выдачи",
+  "buy-for-uzum": "Продавайте на Uzum",
+  "questions": "Вопрос-ответ",
+  "my-order": "Мои заказы",
+  "uz": "O'zbekcha",
+  "ru": "Русский",
+  "input-text": "Искать товары и категории",
+  "sign-up": "Войти",
+  "favorite": "Избранное",
+  "basket": "Корзина",
+  "electronics": "Электроника",
+  "technic": "Бытовые техники",
+  "clothes": "Одежда",
+  "shoes": "Обувь",
+  "accessories": "Аксессуары",
+  "care": "Красота и уход",
+  "health": "здоровья",
+  "more": "Еще"
 }

@@ -1,16 +1,22 @@
 {
-    "massage":{
-        "citys": "Shahar",
-        "city-name": "Toshkent",
-        "give-zone": "Topshirish punktlari",
-        "buy-for-uzum": "Uzumda soting",
-        "questions": "Savol-Javoblar",
-        "my-order": "Buyurtmalarim",
-        "uz": "O'zbekcha",
-        "ru": "Русский",
-        "input-text": "Mahsulotlar va turkumlar izlash",
-        "sign-up": "Kirish",
-        "favorite": "Saralangan",
-        "basket": "Savat"
-    }
+  "citys": "Shahar",
+  "city-name": "Toshkent",
+  "give-zone": "Topshirish punktlari",
+  "buy-for-uzum": "Uzumda soting",
+  "questions": "Savol-Javoblar",
+  "my-order": "Buyurtmalarim",
+  "uz": "O'zbekcha",
+  "ru": "Русский",
+  "input-text": "Mahsulotlar va turkumlar izlash",
+  "sign-up": "Kirish",
+  "favorite": "Saralangan",
+  "basket": "Savat",
+  "electronics": "Elektronika",
+  "technic": "Maishiy texnika",
+  "clothes": "Kiym",
+  "shoes": "Poyabzallar",
+  "accessories": "Aksesuarlar",
+  "care": "Gozallik va parvarish",
+  "health": "Salomatlik",
+  "more": "Yana"
 }
