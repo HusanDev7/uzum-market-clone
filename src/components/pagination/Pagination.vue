@@ -3,12 +3,11 @@ import { ref, computed, onMounted } from "vue";
 import { useProductStore } from "@/stores/productStore";
 
 const productStore = useProductStore();
-const currentPage = ref(1); 
+const currentPage = ref(1);
 
 onMounted(() => {
-  productStore.getProduct(0, 20); 
+  productStore.getProduct(0, 20);
 });
-
 
 const loadMore = () => {
   currentPage.value++;
@@ -22,7 +21,7 @@ const allProductsLoaded = computed(() => {
 <template>
   <div class="btn__box">
     <button class="btn" @click="loadMore" :disabled="allProductsLoaded">
-      Yana Ko'rsatish 20
+      {{ $t("pagination-btn") }}
     </button>
   </div>
 </template>

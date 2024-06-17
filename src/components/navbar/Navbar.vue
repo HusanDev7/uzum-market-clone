@@ -15,7 +15,6 @@ import { ref, onMounted, onBeforeUnmount } from "vue";
 import { useAddBasketStore } from "@/stores/addBasketStore";
 import { useProductStore } from "@/stores/productStore";
 import { i18n } from "@/main";
-import { t } from "vue-i18n";
 const productStore = useProductStore();
 const addBasketStore = useAddBasketStore();
 
@@ -23,14 +22,14 @@ const dropdownActive = ref(false);
 const searchFilter = ref("");
 
 const category = [
-  { id: 1, keyWords: t("electronics") },
-  { id: 2, keyWords: t("technic") },
-  { id: 3, keyWords: t("clothes") },
-  { id: 4, keyWords: t("shoes") },
-  { id: 5, keyWords: t("accessories") },
-  { id: 6, keyWords: t("care") },
-  { id: 7, keyWords: t("health") },
-  { id: 8, keyWords: t("more") },
+  { id: 1, keyWords: "qwe" },
+  { id: 2, keyWords: "qwe" },
+  { id: 3, keyWords: "qwe" },
+  { id: 4, keyWords: "wqe" },
+  { id: 5, keyWords: "wqe" },
+  { id: 6, keyWords: "qwe" },
+  { id: 7, keyWords: "qwe" },
+  { id: 8, keyWords: "qwe" },
 ];
 
 const toggleDropdown = () => {
@@ -83,34 +82,34 @@ onBeforeUnmount(() => {
             <span class="navbar__top-icon">
               <IconLocation />
             </span>
-            <p class="navbar__top-city">{{ t("citys") }}:</p>
-            <p class="navbar__top-city-name">{{ t("city-name") }}</p>
+            <p class="navbar__top-city">{{ $t("citys") }}:</p>
+            <p class="navbar__top-city-name">{{ $t("city-name") }}</p>
             <a
               href="https://uzum.uz/uz/about/delivery-points"
               class="navbar__top-getZone"
-              >{{ t("give-zone") }}</a
+              >{{ $t("give-zone") }}</a
             >
           </div>
         </div>
         <div class="navbar__top-item">
           <div class="navbar__top-item-box2">
             <a href="https://seller.uzum.uz/" class="navbar__top-sallInUzum">{{
-              t("buy-for-uzum")
+              $t("buy-for-uzum")
             }}</a>
             <a href="https://uzum.uz/uz/faq" class="navbar__top-questions">{{
-              t("questions")
+              $t("questions")
             }}</a>
-            <a href="#" class="navbar__top-orders">{{ t("my-order") }}</a>
+            <a href="#" class="navbar__top-orders">{{ $t("my-order") }}</a>
 
             <div class="navbar__top-dropdown">
               <div class="navbar__top-sellect" @click="toggleDropdown">
                 <span class="navbar__top-selected" v-show="languageUz">
                   <IconUzbekistan :size="20" />
-                  {{ t("uz") }}
+                  {{ $t("uz") }}
                 </span>
                 <span class="navbar__top-selected" v-show="languageRu">
                   <IconRussian :size="20" />
-                  {{ t("ru") }}
+                  {{ $t("ru") }}
                 </span>
               </div>
               <ul class="navbar__top-menu" :class="{ active: dropdownActive }">
@@ -120,7 +119,7 @@ onBeforeUnmount(() => {
                   v-show="!languageRu"
                 >
                   <IconRussian :size="20" />
-                  {{ t("ru") }}
+                  {{ $t("ru") }}
                 </li>
                 <li
                   class="navbar__top-menu-link"
@@ -128,7 +127,7 @@ onBeforeUnmount(() => {
                   v-show="!languageUz"
                 >
                   <IconUzbekistan :size="20" />
-                  {{ t("uz") }}
+                  {{ $t("uz") }}
                 </li>
               </ul>
             </div>
@@ -149,24 +148,24 @@ onBeforeUnmount(() => {
           v-model="searchFilter"
           @keydown.enter="search"
           type="text"
-          :placeholder="t('input-text')"
+          :placeholder="$t('input-text')"
         />
         <IconSearch @click="search" />
       </div>
 
       <div class="navbar-item2">
         <RouterLink to="#!">
-          <button class="navbar-sign"><IconPerson /> {{ t("sign-up") }}</button>
+          <button class="navbar-sign"><IconPerson /> {{ $t("sign-up") }}</button>
         </RouterLink>
         <RouterLink to="/favorite/">
           <button class="navbar-fav">
-            <IconNavHeard /> {{ t("favorite") }}
+            <IconNavHeard /> {{ $t("favorite") }}
           </button>
         </RouterLink>
 
         <RouterLink to="/basket/">
           <button class="navbar-bag">
-            <IconBag /> {{ t("basket") }}
+            <IconBag /> {{ $t("basket") }}
             <span v-if="addBasketStore.basket?.length === 0"></span>
             <span class="navbar-totallSum" v-else>{{
               addBasketStore.basket?.length

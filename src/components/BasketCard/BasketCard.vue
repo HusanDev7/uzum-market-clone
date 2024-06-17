@@ -24,7 +24,8 @@ setInterval(() => time(), 1000);
 <template>
   <div class="container">
     <h3 class="how-meny-product">
-      Savatingiz, <span>{{ addBasketStore.basket?.length }} mahsulot</span>
+      {{ $t("in-basket") }},
+      <span>{{ addBasketStore.basket?.length }} {{ $t("product") }}</span>
     </h3>
     <div class="basket">
       <div class="basket__box">
@@ -45,8 +46,12 @@ setInterval(() => time(), 1000);
               </div>
               <div class="basket__box-card-mini">
                 <p class="basket__box-title">{{ item.title }}</p>
-                <p v-if="item.brand == null">Sotuvchi: nomalum</p>
-                <p class="basket__box-txt" v-else>Sotuvchi: {{ item.brand }}</p>
+                <p v-if="item.brand == null">
+                  {{ $t("seller") }}: {{ $t("undifine") }}
+                </p>
+                <p class="basket__box-txt" v-else>
+                  {{ $t("seller") }}: {{ item.brand }}
+                </p>
               </div>
               <div class="basket__box-card-mini">
                 <div class="basket__box-counter">
@@ -70,10 +75,10 @@ setInterval(() => time(), 1000);
                   class="basket__box-dell"
                   @click="addBasketStore.removeProduct(item.id)"
                 >
-                  <IconDell /> Yo'q qilish
+                  <IconDell /> {{ $t("delet") }}
                 </span>
                 <span class="basket__box-price"
-                  >{{ item.price * item.quantity }} 000 so'm</span
+                  >{{ item.price * item.quantity }} 000 {{ $t("sum") }}</span
                 >
               </div>
             </div>
@@ -81,29 +86,29 @@ setInterval(() => time(), 1000);
         </div>
       </div>
       <div class="basket-order">
-        <p class="basket-order-title">Buyurtmangiz</p>
+        <p class="basket-order-title">{{ $t("your-order") }}</p>
         <div class="basket-order-box">
           <div class="basket-order-box-mini">
             <p class="basket-order-txt">
-              Mahsulotlar ({{ addBasketStore.basket?.length }}):
+              {{ $t("products") }} ({{ addBasketStore.basket?.length }}):
             </p>
           </div>
           <div class="basket-order-box-mini">
             <p class="basket-order-price">
-              {{ addBasketStore.totallSum * 2 }} 000 so'm
+              {{ addBasketStore.totallSum * 2 }} 000 {{ $t("sum") }}
             </p>
           </div>
         </div>
-        <span class="basket-order-delivary"
-          >Yetkazib berish M05 27 {{ hour }}:{{ minut }}:{{ secont }}</span
+        <span class="basket-order-delivary">
+          {{ $t("deliver") }} M05 27 {{ hour }}:{{ minut }}:{{ secont }}</span
         >
         <div class="basket-order-prices">
-          <p class="basket-order-prices-title">Jami:</p>
+          <p class="basket-order-prices-title">{{ $t("overall") }}:</p>
           <p class="basket-order-prices-price">
-            {{ addBasketStore.totallSum }} 000 so'm
+            {{ addBasketStore.totallSum }} 000 {{ $t("sum") }}
           </p>
         </div>
-        <button class="basket-order-goOrder">Rasmilashtirishga o'tish</button>
+        <button class="basket-order-goOrder">{{ $t("go-order") }}</button>
       </div>
     </div>
   </div>

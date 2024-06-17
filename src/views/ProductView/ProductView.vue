@@ -18,9 +18,10 @@ const adds = computed(() => {
   if (!productSingleStore.product || !favroriteStore.favorite) {
     return false;
   }
-  return favroriteStore.favorite.some(item => item.id === productSingleStore.product.id);
+  return favroriteStore.favorite.some(
+    (item) => item.id === productSingleStore.product.id
+  );
 });
-
 </script>
 
 <template>
@@ -37,14 +38,26 @@ const adds = computed(() => {
               <span class="product__box-rating">
                 {{ productSingleStore.product?.rating }}
               </span>
-              <span class="product__box-txt">(baho)</span>
-              <span class="product__box-txt">{{ productSingleStore.product?.stock }} Buyurtma</span>
+              <span class="product__box-txt">({{ $t("gread") }})</span>
+              <span class="product__box-txt"
+                >{{ productSingleStore.product?.stock }} {{ $t("order") }}</span
+              >
             </div>
             <div class="product__box-mini">
-              <span class="product__box-mini-fav" @click="favroriteStore.addFavStore(productSingleStore.product);">
-                <IconHeard class="product__box-mini-fav-heard" :class="{ active: !!adds }" :size="16 && 16" />
+              <span
+                class="product__box-mini-fav"
+                @click="favroriteStore.addFavStore(productSingleStore.product)"
+              >
+                <IconHeard
+                  class="product__box-mini-fav-heard"
+                  :class="{ active: !!adds }"
+                  :size="16 && 16"
+                />
               </span>
-              <span class="product__box-txt-fav">{{ adds ? "Istaklarda" : "Istaklarga" }}</span>
+              <span class="product__box-txt-fav"
+                >{{
+                adds ? $t("in-fav") : $t("fav") }}</span
+              >
             </div>
           </div>
           <div class="product__desc">
@@ -55,45 +68,56 @@ const adds = computed(() => {
               {{ productSingleStore.product?.description }}
             </p>
             <span class="product__line"></span>
-            <h4 class="product__conter-title">Miqdor:</h4>
+            <h4 class="product__conter-title">{{ $t("much") }}:</h4>
             <div class="product__prices-count">
               <div class="product__counter">
-                <span class="product__counter-decrement"
-                  @click="addBasketStore.decrementQ(productSingleStore.product)">-</span>
+                <span
+                  class="product__counter-decrement"
+                  @click="addBasketStore.decrementQ(productSingleStore.product)"
+                  >-</span
+                >
                 <span class="product__count">
-                  {{
-                  productSingleStore.product?.quantity
-                }}
+                  {{ productSingleStore.product?.quantity }}
                 </span>
-                <span class="product__counter-increment"
-                  @click="addBasketStore.incrementQ(productSingleStore.product)">+</span>
+                <span
+                  class="product__counter-increment"
+                  @click="addBasketStore.incrementQ(productSingleStore.product)"
+                  >+</span
+                >
               </div>
-              <span class="product__prices-count-quantity">Sotuvda
-                {{ productSingleStore.product?.minimumOrderQuantity }} dona
-                bor</span>
+              <span class="product__prices-count-quantity"
+                >{{ $t("buy's") }}
+                {{ productSingleStore.product?.minimumOrderQuantity }}
+                {{ $t("item") }}</span
+              >
             </div>
           </div>
 
           <div class="product__price">
-            <h4 class="product__price-title">Narx:</h4>
+            <h4 class="product__price-title">{{$t("price")}}:</h4>
             <h3 class="product__price-price">
               {{
-                  productSingleStore.product?.price *
-                  (addBasketStore.basket.find(
-                    (item) => item.id === productSingleStore.product?.id
-                  )?.quantity || 1)
-                }}
-              000 So'm
+                productSingleStore.product?.price *
+                (addBasketStore.basket.find(
+                  (item) => item.id === productSingleStore.product?.id
+                )?.quantity || 1)
+              }}
+              000 {{$t("sum")}}
             </h3>
           </div>
 
           <div class="product__btns">
-            <button class="product__btns-btn" @click="addBasketStore.getAddBasket(productSingleStore.product)">
-              <RouterLink to="#!" class="product__btns-btn-link1">Savatga qoshish</RouterLink>
+            <button
+              class="product__btns-btn"
+              @click="addBasketStore.getAddBasket(productSingleStore.product)"
+            >
+              <RouterLink to="#!" class="product__btns-btn-link1"
+                >{{$t("add")}}</RouterLink
+              >
             </button>
             <button class="product__btns-btn-order">
               <RouterLink to="/" class="product__btns-btn-order-link">
-                Tugmani 1 bosishda xarid qilish
+                {{ $t("click") }}
               </RouterLink>
             </button>
           </div>

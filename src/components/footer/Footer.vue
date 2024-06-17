@@ -6,27 +6,27 @@ import { IconInstagram, IconTelegram, IconYoutube, IconFackebook } from "@/lib/i
     <div class="footer">
         <div class="footer__box">
             <ul class="footer__list">
-                <h4 class="footer__list-title">Biz haqimizda</h4>
-                <li class="footer__list-item">Topshirish punktlari</li>
-                <li class="footer__list-item">Vakansiyalar</li>
+                <h4 class="footer__list-title">{{ $t("about-us") }}</h4>
+                <li class="footer__list-item">{{$t("get-zone")}}</li>
+                <li class="footer__list-item">{{$t("jobs")}}</li>
             </ul>
         </div>
         <div class="footer__box">
             <ul class="footer__list">
-                <h4 class="footer__list-title">Foydalanuvchilarga</h4>
-                <li class="footer__list-item">Biz bilan bog'lanish</li>
-                <li class="footer__list-item">Savol javob</li>
+                <h4 class="footer__list-title">{{$t("user's")}}</h4>
+                <li class="footer__list-item">{{$t("call-us")}}</li>
+                <li class="footer__list-item">{{$t("asks")}}</li>
             </ul>
         </div>
         <div class="footer__box">
             <ul class="footer__list">
-                <h4 class="footer__list-title">Tadbirkorlarga</h4>
-                <li class="footer__list-item">Uzumda soting</li>
-                <li class="footer__list-item">Sotuvchi kabinetiga kirish</li>
+                <h4 class="footer__list-title">{{$t("bussnes")}}</h4>
+                <li class="footer__list-item">{{$t("sell")}}</li>
+                <li class="footer__list-item">{{$t("sign-in")}}</li>
             </ul>
         </div>
         <div class="footer__box">
-            <h4 class="footer__list-title2">Ilovani yuklab olish</h4>
+            <h4 class="footer__list-title2">{{$t("download-app")}}</h4>
             <ul class="footer__list2">
                 <li class="footer__list2-item2">
                     <img class="footer__list-item-img" src="@/assets/img/appStore.svg" alt="" />
